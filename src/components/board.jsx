@@ -4,9 +4,9 @@ import Square from './square.jsx';
 
 const Board = () => {
   const board =[];
-  for (let i = 1; i < 9; i++){
+  for (let i = 1; i <= 8; i++){
     const rows = [];
-    for (let j = 1; j < 9; j++) {
+    for (let j = 1; j <= 8; j++) {
       rows.push(<Square />)
     }
     board.push(rows);
@@ -17,6 +17,5 @@ const Board = () => {
     </div>
   )
 };
-
 
 export default Board;

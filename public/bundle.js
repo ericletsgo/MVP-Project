@@ -23861,9 +23861,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Board = function Board() {
   var board = [];
-  for (var i = 1; i < 9; i++) {
+  for (var i = 1; i <= 8; i++) {
     var rows = [];
-    for (var j = 1; j < 9; j++) {
+    for (var j = 1; j <= 8; j++) {
       rows.push(_react2.default.createElement(_square2.default, null));
     }
     board.push(rows);
@@ -23910,7 +23910,9 @@ var Pawn = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Pawn.__proto__ || Object.getPrototypeOf(Pawn)).call(this, props));
 
-    _this.state = {};
+    _this.state = {
+      color: undefined
+    };
     return _this;
   }
 
@@ -23919,7 +23921,21 @@ var Pawn = function (_React$Component) {
     value: function movement() {}
   }, {
     key: 'render',
-    value: function render() {}
+    value: function render() {
+      if (this.state.color === 'white') {
+        return _react2.default.createElement(
+          'span',
+          null,
+          '\u2659'
+        );
+      } else if (this.state.color === 'black') {
+        return _react2.default.createElement(
+          'span',
+          null,
+          '\u265F'
+        );
+      }
+    }
   }]);
 
   return Pawn;
@@ -23961,13 +23977,29 @@ var Bishop = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Bishop.__proto__ || Object.getPrototypeOf(Bishop)).call(this, props));
 
-    _this.state = {};
+    _this.state = {
+      color: undefined
+    };
     return _this;
   }
 
   _createClass(Bishop, [{
     key: 'render',
-    value: function render() {}
+    value: function render() {
+      if (this.state.color === 'white') {
+        return _react2.default.createElement(
+          'span',
+          null,
+          '\u2657'
+        );
+      } else if (this.state.color === 'black') {
+        return _react2.default.createElement(
+          'span',
+          null,
+          '\u265D'
+        );
+      }
+    }
   }]);
 
   return Bishop;
@@ -24008,13 +24040,29 @@ var Knight = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Knight.__proto__ || Object.getPrototypeOf(Knight)).call(this, props));
 
-    _this.state = {};
+    _this.state = {
+      color: undefined
+    };
     return _this;
   }
 
   _createClass(Knight, [{
     key: 'render',
-    value: function render() {}
+    value: function render() {
+      if (this.state.color === 'white') {
+        return _react2.default.createElement(
+          'span',
+          null,
+          '\u2658'
+        );
+      } else if (this.state.color === 'black') {
+        return _react2.default.createElement(
+          'span',
+          null,
+          '\u265E'
+        );
+      }
+    }
   }]);
 
   return Knight;
@@ -24055,13 +24103,29 @@ var Rook = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Rook.__proto__ || Object.getPrototypeOf(Rook)).call(this, props));
 
-    _this.state = {};
+    _this.state = {
+      color: undefined
+    };
     return _this;
   }
 
   _createClass(Rook, [{
     key: 'render',
-    value: function render() {}
+    value: function render() {
+      if (this.state.color === 'white') {
+        return _react2.default.createElement(
+          'span',
+          null,
+          '\u2656'
+        );
+      } else if (this.state.color === 'black') {
+        return _react2.default.createElement(
+          'span',
+          null,
+          '\u265C'
+        );
+      }
+    }
   }]);
 
   return Rook;
@@ -24102,13 +24166,29 @@ var Queen = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Queen.__proto__ || Object.getPrototypeOf(Queen)).call(this, props));
 
-    _this.state = {};
+    _this.state = {
+      color: undefined
+    };
     return _this;
   }
 
   _createClass(Queen, [{
     key: 'render',
-    value: function render() {}
+    value: function render() {
+      if (this.state.color === 'white') {
+        return _react2.default.createElement(
+          'span',
+          null,
+          '\u2654'
+        );
+      } else if (this.state.color === 'black') {
+        return _react2.default.createElement(
+          'span',
+          null,
+          '\u265A'
+        );
+      }
+    }
   }]);
 
   return Queen;
@@ -24149,13 +24229,29 @@ var King = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (King.__proto__ || Object.getPrototypeOf(King)).call(this, props));
 
-    _this.state = {};
+    _this.state = {
+      color: undefined
+    };
     return _this;
   }
 
   _createClass(King, [{
     key: 'render',
-    value: function render() {}
+    value: function render() {
+      if (this.state.color === 'white') {
+        return _react2.default.createElement(
+          'span',
+          null,
+          '\u2655'
+        );
+      } else if (this.state.color === 'black') {
+        return _react2.default.createElement(
+          'span',
+          null,
+          '\u265B'
+        );
+      }
+    }
   }]);
 
   return King;
@@ -24181,7 +24277,7 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Square = function Square() {
-  return _react2.default.createElement("div", { "class": "square" });
+  return _react2.default.createElement("div", { className: "square" });
 };
 
 exports.default = Square;

@@ -2,9 +2,10 @@
   "name": "mvp-project",
   "version": "1.0.0",
   "description": "Chess",
-  "main": "index.js",
+  "main": "bundle.js",
   "scripts": {
-    "start": "nodemon",
+    "server-dev": "nodemon ./server/index.js",
+    "start": "node ./server/index.js",
     "build": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
