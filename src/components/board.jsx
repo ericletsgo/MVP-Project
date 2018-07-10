@@ -1,21 +1,19 @@
 import React from 'react';
 
-import Square from './square.jsx';
+import Row from './row.jsx';
 
-const Board = () => {
-  const board =[];
-  for (let i = 1; i <= 8; i++){
-    const rows = [];
-    for (let j = 1; j <= 8; j++) {
-      rows.push(<Square />)
-    }
-    board.push(rows);
+function isEven(num){
+  return num % 2 == 0
+};
+
+class Board extends React.Component {
+  render() {
+   let rows = []
+   for(var i=1;i<=8;i++){
+     rows.push(<Row number={i}/>)
+   }
+   return <div className="chess_board">{rows}</div>;
   }
-  return (
-    <div>
-      {board}
-    </div>
-  )
 };
 
 export default Board;
